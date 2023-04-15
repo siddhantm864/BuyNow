@@ -15,6 +15,7 @@ router.post("/register", async (req, res) => {
     })
 
     try {
+        // console.log(password)
         const savedUser = await newUser.save();
         res.status(201).json(savedUser)
     } catch (err) {
@@ -34,6 +35,7 @@ router.post('/login', async (req, res) => {
             user.password,
             process.env.PASS_SEC
         );
+        // console.log(hashedPassword)
         const OriginalPassword = hashedPassword.toString(CryptoJS.enc.Utf8)
         OriginalPassword !== req.body.password && res.status(401).json("wrong credentials")
 
@@ -44,7 +46,7 @@ router.post('/login', async (req, res) => {
             process.env.JWT_SEC,
             { expiresIn: "3d" }
         );
-
+        // console.log(accessToken)
         const { password, ...others } = user._doc  //destructuring to show all data except password
         res.status(200).json({ ...others, accessToken })
     } catch (err) {
