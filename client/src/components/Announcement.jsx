@@ -13,9 +13,9 @@ const Container =styled.div`
 const Announcement = () => {
   return (
    <Container>
-    Super Deal ! Free Shoping on Order Over $50
+    Super Deal ! Free Shiping on Order Over $50
    </Container>
   )
 }
 
-export default Announcement
+export default Announcement   
