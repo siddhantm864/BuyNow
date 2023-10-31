@@ -65,8 +65,6 @@ transition: all .5s ease;
 }
 `;
 
-
-
 const Product = ({ item }) => {
     return (
         <Container>

@@ -51,7 +51,7 @@ const ProductList = () => {
       ...filters,
       [e.target.name]: value,
     })
-  }
+  }  
   // console.log("f", filters)
   return (
     <Container>
